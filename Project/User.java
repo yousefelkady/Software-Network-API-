@@ -12,7 +12,7 @@ public class User implements UserControl {
 	private int numberOfFriends;
 	private int numberOfFrineds;
 	private ArrayList<String> friendsList;
-	private String userType;
+	public String userType;
 
 
 	@Override
@@ -40,8 +40,15 @@ public class User implements UserControl {
 	}
 
 	@Override
-	public void subscribeToPremium() {
-		// TODO Auto-generated method stub
+	public void subscribeToPremium(User Object) {
+		User obj = new User();
+		obj = object;
+		if (obj.userType == "normal" || obj.userType == "Normal"){
+			PremiumUser(obj);
+		}
+		else{
+			return;
+		}
 
 	}
 
