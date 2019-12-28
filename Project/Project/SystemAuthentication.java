@@ -4,7 +4,7 @@ public class SystemAuthentication {
 
 	private String userName;
 	private String userPassword;
-	private ArrayList<User> userList;
+	public ArrayList<User> userList;
 
 	/**
 	 * 
