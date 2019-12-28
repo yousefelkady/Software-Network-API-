@@ -2,8 +2,8 @@ public class PremiumUser extends User {
 
 	
 	PremiumUser(User object){
-		User premiumObject = new User();
-		premiumObject  = object;
+		User premiumObject = new User(userType);
+		premiumObject.userType  = object.userType;
 		premiumObject.userType = "Premium";
 		becomePremium();
 

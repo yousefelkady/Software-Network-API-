@@ -1,4 +1,6 @@
+import java.lang.Character.UnicodeScript;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class User implements UserControl {
@@ -14,24 +16,27 @@ public class User implements UserControl {
 	private ArrayList<String> friendsList;
 	public String userType;
 
-	UserControl(int id , String password){};
-	UserControl(int id){};
+	User(int id , String password){};
+	User(int id){};
+	User(String userString){}
+	User(){};
 
 	@Override
 	public void signIn(User existingUser) {
 		//take inputs from user
-		User obj = new User( id ,  password);
+		User obj = new User( ID ,  password);
 		System.out.println("Enter your ID");
 		Scanner input1 = new Scanner(System.in);
-		obj.id= input1.nextInt();
+		obj.ID= input1.nextInt();
 		System.out.println("Enter your password");
 		Scanner input2 = new Scanner(System.in);
 		obj.password = input2.nextLine();
 
 
 		//check if the ID and password exist
-		for (int i; i<3; i++){
-			if (isValid(obj.id , obj.password)){ System.out.println("Logged successfully");
+		SystemAuthentication searchObject = new SystemAuthentication();
+		for (int i=0; i<3; i++){
+			if (searchObject.isValid(obj.ID , obj.password)){ System.out.println("Logged successfully");
 				break;
 			}else{
 				System.out.println("Invalid ID or Password");
@@ -49,6 +54,8 @@ public class User implements UserControl {
 		}
 	}
 
+	
+
 	@Override
 	public void signUp(User newUser) {
 		// TODO Auto-generated method stub
@@ -56,13 +63,14 @@ public class User implements UserControl {
 	}
 
 	@Override
-	public void addFriend(String name) {
+	public void addFriend(int userID) {
 		while (true){
 			User obj = new User(ID);
 			System.out.println("User's ID");
 			Scanner input = new Scanner(System.in);
 			obj.ID = input.nextInt();
-			if (isExist(obj.ID)){
+			SystemAuthentication newSearchObject = new SystemAuthentication();
+			if (newSearchObject.isExist(obj.ID)){
 				ArrayList<Integer> friendsList = new ArrayList<Integer>();
 				friendsList.add(obj.ID);
 				numberOfFriends++;
@@ -82,16 +90,20 @@ public class User implements UserControl {
 
 	@Override
 	public void subscribeToPremium(User Object) {
-		User obj = new User();
-		obj = object;
+		User obj = new User(userType);
+		obj.userType = Object.userType;
 		if (obj.userType == "normal" || obj.userType == "Normal"){
-			PremiumUser(obj);
+			PremiumUser userObj = new PremiumUser(obj);
 		}
 		else{
 			return;
 		}
 
 	}
+
+
+
+
 
 	
 

@@ -1,7 +1,7 @@
 public interface UserControl {
 
 
-	
+
 
 	void signIn(User object);
 
@@ -14,7 +14,7 @@ public interface UserControl {
 	
 	void deleteFriend(String name);
 
-	void subscribeToPremium();
+	void subscribeToPremium(User Object);
 
 	
 	public static void  main(String[] args){
