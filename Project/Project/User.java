@@ -115,7 +115,7 @@ public class User implements UserControl {
 	
 	
 	@Override
-	public Boolean addFriend(int userID) {
+	public void addFriend(int userID) {
 		while (true){
 			User obj = new User(ID);
 			System.out.println("User's ID");
@@ -123,15 +123,12 @@ public class User implements UserControl {
 			obj.ID = input.nextInt();
 			SystemAuthentication newSearchObject = new SystemAuthentication();
 			if (newSearchObject.isExist(obj.ID)){
-				
-				obj.friendsList.add(obj.friendsList.size(),obj.toString());
+				ArrayList<Integer> friendsList = new ArrayList<Integer>();
+				friendsList.add(obj.ID);
 				numberOfFriends++;
 				break;
-				return true;
-				
 			}else{
-				return false;
-				break;
+				System.out.println("Wrong ID");
 			}
 	
 		}
