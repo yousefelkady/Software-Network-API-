@@ -5,7 +5,7 @@ public interface UserControl {
 
 	void signUp();
 
-	void addFriend(int ID);
+	Boolean addFriend(int ID);
 
     void acceptFriend(User friendRequestObject);
 	
