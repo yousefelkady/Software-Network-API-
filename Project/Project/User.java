@@ -111,6 +111,9 @@ public class User implements UserControl {
 
 
 	}
+	
+	
+	
 	@Override
 	public void addFriend(int userID) {
 		while (true){
@@ -131,6 +134,8 @@ public class User implements UserControl {
 		}
 	}
 
+	
+	
 	@Override
 	public void acceptFriend(User friendRequestObject){
 		User myUser = new User();
@@ -152,6 +157,8 @@ public class User implements UserControl {
 
 	}
 
+	
+	
 	@Override
 	public void subscribeToPremium(User Object) {
 		User obj = new User(userType);
